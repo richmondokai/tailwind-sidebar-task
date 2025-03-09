@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar-StickyHeader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="ouput.css" rel="stylesheet">
+    <style>
+        /* Custom animation for hover effects */
+        .sidebar-item, .profile-container, .notification-container, .logo img, .mcd-logo img {
+            transition: all 0.3s ease;
+        }
+        .sidebar-item:hover, .profile-container:hover, .notification-container:hover, .logo img:hover, .mcd-logo img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center bg-gradient-to-r from-purple-50 to-blue-50 font-['Poppins'] min-h-screen py-8">
+    <!-- Header -->
+    <div class="header w-full max-w-6xl px-4 flex justify-between items-center">
+        <div class="header-left flex items-center gap-4">
+            <div class="logo flex items-center gap-3">
+                <a href="#">
+                    <img src="NewLogo.png" alt="Order Status Logo" class="w-12 h-12 rounded-lg hover:scale-110">
+                </a>
+                <a href="#" class="text-2xl font-bold text-gray-800 hover:text-red-500 transition-colors">Order Status</a>
+            </div>
+        </div>
+        <button class="fullscreen-btn border border-gray-300 px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors">
+            ⤢ FullScreen
+        </button>
+    </div>
+
+    <!-- McDonald's Info Card -->
+    <div class="mcdonald-card bg-white rounded-2xl shadow-xl w-11/12 max-w-4xl p-6 flex justify-between items-center mt-6">
+        <div class="mcd-logo flex items-center gap-4">
+            <img src="McD Logo.png" alt="McDonald's Logo" class="w-10 h-10 rounded-lg hover:scale-110">
+            <span class="text-xl font-bold text-gray-800">McDonald's</span>
+        </div>
+        <div class="time text-xl font-bold text-gray-800">15:03</div>
+    </div>
+
+    <!-- Vertical Sidebar -->
+    <div class="vertical-sidebar fixed left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-gray-800 rounded-3xl p-3 flex flex-col gap-4 shadow-2xl transition-all duration-300">
+        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
+            <img src="Vector.png" alt="z" class="w-4 h-4">
+        </div>
+        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
+            <img src="Vector (1).png" alt="z" class="w-4 h-4">
+        </div>
+        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
+            <img src="Vector (2).png" alt="z" class="w-4 h-4">
+        </div>
+        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-orange-500 rounded-full hover:bg-orange-600">
+            <img src="Vector (3).png" alt="z" class="w-4 h-4">
+        </div>
+        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
+            <img src="Vector (4).png" alt="z" class="w-4 h-4">
+        </div>
+        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
+            <img src="Vector (5).png" alt="z" class="w-4 h-4">
+        </div>
+    </div>
+
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar fixed left-4 md:left-8 bottom-4 md:bottom-8 bg-white rounded-3xl p-3 flex flex-row md:flex-col gap-3 shadow-2xl transition-all duration-300">
+        <div class="profile-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-white">
+            <img src="me.jpg" alt="Profile" class="w-6 h-6 rounded-full cursor-pointer">
+        </div>
+        <div class="notification-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-white">
+            <img src="Frame 7.jpg" alt="Notification" class="w-6 h-6 cursor cursor-pointer">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid-wrapper grid grid-cols-1 md:grid-cols-2 gap-6 w-11/12 max-w-4xl mt-8">
+        <!-- Preparing Section -->
+        <div class="section bg-white rounded-2xl shadow-xl p-6">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Preparing</h2>
+            <div class="items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
+            </div>
+        </div>
+
+        <!-- Ready Section -->
+        <div class="section bg-white rounded-2xl shadow-xl p-6">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Ready</h2>
+            <div class="items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".fullscreen-btn").addEventListener("click", function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        function updateTime() {
+            const timeElement = document.querySelector(".time");
+            const now = new Date();
+            timeElement.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
