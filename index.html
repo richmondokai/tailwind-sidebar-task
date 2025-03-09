@@ -41,26 +41,26 @@
         }
 
         /* Vertical Sidebar - Larger Screens */
-        @media (min-width: 768px) {
-            .vertical-sidebar {
-                position: fixed;
-                left: 1rem; /* Adjust as needed */
-                top: 50%;
-                transform: translateY(-50%);
-                flex-direction: column; /* Align items vertically */
-            }
+    @media (min-width: 768px) {
+        .vertical-sidebar {
+            position: fixed;
+            left: 5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            flex-direction: column;
         }
+    }
 
-        /* Profile Sidebar - Larger Screens */
-        @media (min-width: 768px) {
-            .profile-sidebar {
-                position: fixed;
-                right: 1rem; /* Adjust as needed */
-                top: 1rem; /* Adjust as needed */
-                flex-direction: column; /* Align items vertically */
-                display: flex; /* Ensure it's visible */
-            }
+    /* Profile Sidebar - Larger Screens */
+    @media (min-width: 768px) {
+        .profile-sidebar {
+            position: fixed;
+            left: 5rem;
+            bottom: 5%;
+            flex-direction: column;
+            display: flex;
         }
+    }
     </style>
 </head>
 <body class="flex flex-col items-center bg-gradient-to-r from-purple-50 to-blue-50 font-['Poppins'] min-h-screen py-8">
@@ -112,11 +112,11 @@
 
     <!-- Profile Sidebar -->
     <div class="profile-sidebar bg-white rounded-3xl p-3 flex gap-3 shadow-2xl transition-all duration-300">
-        <div class="profile-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-white">
-            <img src="me.jpg" alt="Profile" class="w-6 h-6 rounded-full cursor-pointer">
+        <div class="profile-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-gray-200">
+            <img src="me.jpg" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer">
         </div>
         <div class="notification-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-white">
-            <img src="Frame 7.jpg" alt="Notification" class="w-6 h-6 cursor cursor-pointer">
+            <img src="Frame 7.jpg" alt="Notification" class="w-8 h-8 cursor cursor-pointer">
         </div>
     </div>
 
