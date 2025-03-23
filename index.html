@@ -3,172 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar-StickyHeader</title>
+    <title>Order Status Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="ouput.css" rel="stylesheet">
     <style>
-        /* Custom animation for hover effects */
-        .sidebar-item, .profile-container, .notification-container, .logo img, .mcd-logo img {
-            transition: all 0.3s ease;
+        :root {
+            --Background-White-100: #FFFFFF;
+            --Background-Status-Accepted: #119717;
+            --Background-Black-10: rgba(0, 0, 0, 0.1);
         }
-        .sidebar-item:hover, .profile-container:hover, .notification-container:hover, .logo img:hover, .mcd-logo img:hover {
-            transform: scale(1.1);
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(67.75deg, #FFFFFF 19.18%, #FFEBE7 75.31%);
         }
-
-        /* Vertical Sidebar - Mobile */
-        @media (max-width: 767px) {
-            .vertical-sidebar {
-                position: fixed;
-                bottom: 4px; /* Adjust as needed */
-                left: 50%;
-                transform: translateX(-50%);
-                flex-direction: row; /* Align items horizontally */
-                width: auto; /* Adjust width to fit content */
-                padding: 8px; /* Adjust padding */
-                border-radius: 20px; /* Rounded corners */
-                background-color: rgba(31, 41, 55, 0.9); /* Semi-transparent background */
-            }
-            .profile-sidebar {
-                position: fixed;
-                top: 40px; /* Adjust as needed */
-                right: 20px;
-                flex-direction: row; /* Align items horizontally */
-                width: auto; /* Adjust width to fit content */
-                padding: 8px; /* Adjust padding */
-                border-radius: 20px; /* Rounded corners */
-                background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-            }
+        .sidebar-icon.active {
+            background-color: #FF5634;
         }
-
-        /* Vertical Sidebar - Larger Screens */
-    @media (min-width: 768px) {
-        .vertical-sidebar {
-            position: fixed;
-            left: 5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            flex-direction: column;
+        .section-ready .item {
+            background: var(--Background-Status-Accepted);
+            color: white;
         }
-    }
-
-    /* Profile Sidebar - Larger Screens */
-    @media (min-width: 768px) {
-        .profile-sidebar {
-            position: fixed;
-            left: 5rem;
-            bottom: 5%;
-            flex-direction: column;
-            display: flex;
+        .section-preparing .item {
+            background: var(--Background-Black-10);
+            color: black;
         }
-    }
     </style>
 </head>
-<body class="flex flex-col items-center bg-gradient-to-r from-purple-50 to-blue-50 font-['Poppins'] min-h-screen py-8">
-    <!-- Header -->
-    <div class="header w-full max-w-6xl px-4 flex justify-between items-center">
-        <div class="header-left flex items-center gap-4">
-            <div class="logo flex items-center gap-3">
-                <a href="#">
-                    <img src="NewLogo.png" alt="Order Status Logo" class="w-12 h-12 rounded-lg hover:scale-110">
-                </a>
-                <a href="#" class="text-2xl font-bold text-gray-800 hover:text-red-500 transition-colors">Order Status</a>
+<body class="custom-bg-gradient font-['DM_Sans'] flex min-h-screen w-full flex-col flex-wrap bg-cover bg-no-repeat antialiased">
+    <!-- Sidebar -->
+    <div class="sidebar lg:fixed z-50 flex lg:h-full lg:left-0 lg:w-24 lg:flex-col lg:my-0 fixed flex-row w-full top-0 left-[16px] right-[16px] bottom-auto h-[64px] rounded-[48px] my-4 items-center justify-between py-4 bg-white lg:bg-transparent lg:rounded-none">
+        <!-- Sidebar Logo -->
+        <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-0 lg:static lg:mt-0 lg:top-0">
+            <img src="Logo (1).png" alt="Order Status Logo" class="w-8 h-8">
+        </div>
+
+        <!-- Sidebar Inner (Navigation Icons) -->
+        <div class="sidebar-inner fixed left-1/2 bottom-[32px] top-auto h-[64px] flex-row -translate-x-1/2 lg:left-auto lg:bottom-auto lg:auto lg:flex-col lg:-translate-x-0 lg:h-auto lg:relative z-50 flex gap-2 rounded-[48px] bg-black px-2 py-2 lg:mt-4 lg:justify-center">
+            <div class="sidebar-icon inline-flex items-center justify-center transition-colors hover:outline-black-20 disabled:bg-black-5 disabled:text-black-40 disabled:outline-none h-[48px] bg-white-20 hover:outline-0 min-w-[48px] rounded-full text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold bg-white/20">
+                <img src="Vector.png" alt="z">
+            </div>
+            <div class="sidebar-icon inline-flex items-center justify-center transition-colors hover:outline-black-20 disabled:bg-black-5 disabled:text-black-40 disabled:outline-none h-[48px] bg-white-20 hover:outline-0 min-w-[48px] rounded-full text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold bg-white/20">
+                <img src="Vector (1).png" alt="z">
+            </div>
+            <div class="sidebar-icon inline-flex items-center justify-center transition-colors hover:outline-black-20 disabled:bg-black-5 disabled:text-black-40 disabled:outline-none h-[48px] bg-white-20 hover:outline-0 min-w-[48px] rounded-full text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold bg-white/20">
+                <img src="Vector (2).png" alt="z">
+            </div>
+            <div class="sidebar-icon active inline-flex items-center justify-center transition-colors hover:outline-black-20 disabled:bg-black-5 disabled:text-black-40 disabled:outline-none h-[48px] bg-white-20 hover:outline-0 min-w-[48px] rounded-full text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold bg-white/20">
+                <img src="Vector (3).png" alt="z">
+            </div>
+            <div class="sidebar-icon inline-flex items-center justify-center transition-colors hover:outline-black-20 disabled:bg-black-5 disabled:text-black-40 disabled:outline-none h-[48px] bg-white-20 hover:outline-0 min-w-[48px] rounded-full text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold bg-white/20">
+                <img src="Vector (4).png" alt="z">
+            </div>
+            <div class="sidebar-icon inline-flex items-center justify-center transition-colors hover:outline-black-20 disabled:bg-black-5 disabled:text-black-40 disabled:outline-none h-[48px] bg-white-20 hover:outline-0 min-w-[48px] rounded-full text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold bg-white/20">
+                <img src="Vector (8).png" alt="z">
             </div>
         </div>
-        <button class="fullscreen-btn border border-gray-300 px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-colors">
-            ⤢ FullScreen
-        </button>
-    </div>
 
-    <!-- McDonald's Info Card -->
-    <div class="mcdonald-card bg-white rounded-2xl shadow-xl w-11/12 max-w-4xl p-6 flex justify-between items-center mt-6">
-        <div class="mcd-logo flex items-center gap-4">
-            <img src="image 2.png" alt="McDonald's Logo" class="w-10 h-10 rounded-lg hover:scale-110">
-            <span class="text-xl font-bold text-gray-800">McDonald's</span>
-        </div>
-        <div class="time text-xl font-bold text-gray-800">15:03</div>
-    </div>
-
-    <!-- Vertical Sidebar -->
-    <div class="vertical-sidebar bg-gray-800 rounded-3xl p-3 flex gap-4 shadow-2xl transition-all duration-300">
-        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
-            <img src="Vector.png" alt="z" class="w-4 h-4">
-        </div>
-        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
-            <img src="Vector (1).png" alt="z" class="w-4 h-4">
-        </div>
-        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
-            <img src="Vector (2).png" alt="z" class="w-4 h-4">
-        </div>
-        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-orange-500 rounded-full hover:bg-orange-600">
-            <img src="Vector (3).png" alt="z" class="w-4 h-4">
-        </div>
-        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
-            <img src="Vector (4).png" alt="z" class="w-4 h-4">
-        </div>
-        <div class="sidebar-item w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full hover:bg-orange-500">
-            <img src="Vector (5).png" alt="z" class="w-4 h-4">
-        </div>
-    </div>
-
-    <!-- Profile Sidebar -->
-    <div class="profile-sidebar bg-white rounded-3xl p-3 flex gap-3 shadow-2xl transition-all duration-300">
-        <div class="profile-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-gray-200">
-            <img src="me.jpg" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer">
-        </div>
-        <div class="notification-container w-8 h-8 flex justify-center items-center bg-white rounded-full hover:bg-white">
-            <img src="Frame 7.jpg" alt="Notification" class="w-8 h-8 cursor cursor-pointer">
+        <!-- Sidebar Profile -->
+        <div class="sidebar-profile z-10 flex w-fit flex-row lg:flex-col gap-2 rounded-6 bg-white px-2 py-2 lg:mb-4">
+            <button class="inline-flex h-[48px] min-w-[48px] items-center justify-center rounded-full transition-colors bg-black-10">
+                <img src="Frame 8.png" alt="Profile">
+            </button>
+            <button class="inline-flex h-[48px] min-w-[48px] items-center justify-center rounded-full transition-colors bg-black-10">
+                <img src="Frame 7 (1).png" alt="Notification">
+            </button>
         </div>
     </div>
 
     <!-- Main Content -->
-    <div class="grid-wrapper grid grid-cols-1 md:grid-cols-2 gap-6 w-11/12 max-w-4xl mt-8">
-        <!-- Preparing Section -->
-        <div class="section bg-white rounded-2xl shadow-xl p-6">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Preparing</h2>
-            <div class="items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-                <div class="item bg-gray-100 rounded-xl p-4 flex justify-center items-center text-gray-800 font-bold cursor-pointer hover:bg-gray-200">3885</div>
-            </div>
-        </div>
+    <div class="pt-20 ml-0 lg:ml-20 lg:pt-0 flex flex-grow flex-col">
+        <main class="mt-1 h-screen flex flex-col w-full">
+            <!-- Header -->
+            <header class="flex justify-between p-4 fixed w-full bg-white z-10 lg:max-w-[calc(100%-80px)] max-[30rem]:max-w-full rounded-2xl">
+                <h1 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-black-100">Order Status</h1>
+                <button class="text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold flex gap-2 text-black-100 border border-black-10 rounded-full px-4 py-2">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10V5H1.5V8.5H5V10H0ZM8.5 5V1.5H5V0H10V5H8.5Z" fill="black"></path></svg>
+                    FullScreen
+                </button>
+            </header>
 
-        <!-- Ready Section -->
-        <div class="section bg-white rounded-2xl shadow-xl p-6">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Ready</h2>
-            <div class="items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
-                <div class="item bg-green-500 rounded-xl p-4 flex justify-center items-center text-white font-bold cursor-pointer hover:bg-green-600">3885</div>
+            <div class="sub-content flex flex-col items-center h-full mt-[96px] px-[16px] mb-[16px] w-full md:mt-[80px]">
+                <!-- McDonald's Info Card -->
+                <div class="mcdonald-card flex w-full h-[92px] p-[16px] justify-between items-center rounded-[16px] bg-black/5 md:h-auto md:flex-row md:gap-[8px] sm:p-[16px]">
+                    <div class="mcd-logo flex items-center gap-4 font-medium text-[20px] tracking-[-0.01em] md:gap-2">
+                        <img src="image 2.png" alt="McDonald's Logo" class="w-15 h-15 rounded-xl">
+                        <span class="text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] tracking-[-0.01em] text-black-100 font-normal">McDonald's</span>
+                    </div>
+                    <div class="time text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-black-100">15:03</div>
+                </div>
+
+                <!-- Grid Wrapper -->
+                <div class="grid-wrapper grid w-full flex-grow gap-4 mt-4 md:grid-cols-2 md:mt-[5px] sm:grid-cols-2 sm:mt-[10px] lg:grid-cols-[1fr_383px] max-lg:flex max-lg:flex-row max-[30rem]:flex max-[30rem]:flex-row">                    <div class="flex-1 bg-white rounded-lg p-6 flex flex-col h-full">
+                        <h2 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-center mb-6">Preparing</h2>
+                        <div class="overflow-y-auto masonry-scroll-container flex-1 text-center" style="max-height: calc(100vh - 200px);">
+                            <div class="items flex gap-2 justify-center items-start flex-wrap flex-grow">
+                                <!-- Repeat items -->
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ready Section -->
+                    <div class="flex-1 bg-white rounded-lg p-6 flex flex-col h-full">
+                        <h2 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-center mb-6">Ready</h2>
+                        <div class="overflow-y-auto masonry-scroll-container flex-1 text-center" style="max-height: calc(100vh - 200px);">                            <div class="items flex gap-2 justify-center items-start flex-wrap flex-grow">
+                            <div class="items flex gap-2 justify-center items-start flex-wrap flex-grow">
+                                <!-- First item is larger -->
+                                <div class="item w-full h-32 flex items-center justify-center rounded-xl font-bold text-[32px] bg-green-600 text-white">3885</div>
+                                <!-- Repeat items -->
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
 
     <script>
-        document.querySelector(".fullscreen-btn").addEventListener("click", function() {
+        // Fullscreen functionality
+        const fullscreenBtn = document.querySelector(".fullscreen-btn");
+        const subContent = document.querySelector(".sub-content");
+        const header = document.querySelector(".header");
+        const sidebar = document.querySelector(".sidebar");
+        const mainContent = document.querySelector(".main-content");
+
+        fullscreenBtn.addEventListener("click", function () {
             if (!document.fullscreenElement) {
+                // Enter fullscreen mode
                 document.documentElement.requestFullscreen();
+
+                // Hide header and sidebar
+                header.style.display = "none";
+                sidebar.style.display = "none";
+
+                // Adjust sub-content to take full space with 16px padding
+                subContent.style.width = "100%";
+                subContent.style.height = "100vh";
+                subContent.style.marginLeft = "0";
+                subContent.style.padding = "16px";
+                mainContent.style.marginLeft = "0";
             } else {
+                // Exit fullscreen mode
                 document.exitFullscreen();
+
+                // Show header and sidebar
+                header.style.display = "flex";
+                sidebar.style.display = "flex";
+
+                // Reset sub-content styles
+                subContent.style.width = "";
+                subContent.style.height = "";
+                subContent.style.marginLeft = "";
+                subContent.style.padding = "";
+                mainContent.style.marginLeft = "96px";
             }
         });
 
+        // Update time every second (without AM/PM)
         function updateTime() {
             const timeElement = document.querySelector(".time");
             const now = new Date();
-            timeElement.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const hours = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+            timeElement.innerText = `${hours}:${minutes}`;
         }
         setInterval(updateTime, 1000);
         updateTime();
