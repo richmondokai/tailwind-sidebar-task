@@ -74,15 +74,18 @@
     <div class="pt-20 ml-0 lg:ml-20 lg:pt-0 flex flex-grow flex-col">
         <main class="mt-1 h-screen flex flex-col w-full">
             <!-- Header -->
-            <header class="flex justify-between p-4 fixed w-full bg-white z-10 lg:max-w-[calc(100%-80px)] max-[30rem]:max-w-full rounded-2xl">
+            <header class="flex justify-between p-4 fixed w-full bg-[linear-gradient(67.75deg,_#ffffff_19.18%,_#ffebe7_75.31%)] z-[900] lg:max-w-[calc(100%-96px)] max-[30rem]:max-w-full">
                 <h1 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-black-100">Order Status</h1>
-                <button class="text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold flex gap-2 text-black-100 border border-black-10 rounded-full px-4 py-2">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10V5H1.5V8.5H5V10H0ZM8.5 5V1.5H5V0H10V5H8.5Z" fill="black"></path></svg>
+                <button class="flex items-center gap-[6px] px-3 py-2 border border-black/10 rounded-[25px] bg-transparent text-[14px] font-bold cursor-pointer w-[124px] h-[48px]">
+                    <svg class="w-[14px] h-[14px] stroke-black stroke-[3]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 16V20H8" stroke-linecap="square" stroke-linejoin="bevel"/>
+                        <path d="M20 8V4H16" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    </svg>
                     FullScreen
                 </button>
             </header>
 
-            <div class="sub-content flex flex-col items-center h-full mt-[96px] px-[16px] mb-[16px] w-full md:mt-[80px]">
+            <div class="sub-content flex flex-col items-center h-full mt-[80px] px-[16px] mb-[16px] w-full md:mt-[96px]">
                 <!-- McDonald's Info Card -->
                 <div class="mcdonald-card flex w-full h-[92px] p-[16px] justify-between items-center rounded-[16px] bg-black/5 md:h-auto md:flex-row md:gap-[8px] sm:p-[16px]">
                     <div class="mcd-logo flex items-center gap-4 font-medium text-[20px] tracking-[-0.01em] md:gap-2">
