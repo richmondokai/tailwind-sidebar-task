@@ -33,7 +33,7 @@
     <!-- Sidebar -->
     <div class="sidebar lg:fixed z-50 flex lg:h-full lg:left-0 lg:w-24 lg:flex-col lg:my-0 fixed flex-row w-[96%] left-[16px] right-[16px] bottom-auto h-[64px] top-0 rounded-[48px] my-4 items-center justify-between py-4 bg-white lg:bg-transparent lg:rounded-none md:right-4 sm:mr-5 sm:px-3">
         <!-- Sidebar Logo -->
-        <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-0 lg:static lg:mt-0 lg:top-0">
+        <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-0 lg:static ml-0 lg:mt-0 lg:top-0">
             <img src="Logo (1).png" alt="Order Status Logo" class="w-8 h-8">
         </div>
 
@@ -71,20 +71,23 @@
     </div>
 
     <!-- Main Content -->
-    <div class="pt-20 ml-0 lg:ml-20 lg:pt-2 flex flex-grow flex-col">
+    <div class="pt-24 ml-0 lg:ml-24 lg:pt-2 flex flex-grow flex-col">
         <main class="mt-0 h-screen flex flex-col w-full">
             <!-- Header -->
-            <header class="flex justify-between p-4 fixed w-full bg-[linear-gradient(67.75deg,_#ffffff_19.18%,_#ffebe7_75.31%)] z-[900] lg:max-w-[calc(100%-80px)] max-[30rem]:max-w-full rounded-2xl">
+            <header class="flex items-center h-24 justify-between lg:top-0 w-full bg-[linear-gradient(67.75deg,_#ffffff_19.18%,_#ffebe7_75.31%)] lg:fixed lg:z-[900] lg:max-w-[calc(100%-96px)] lg:pl-0 pt-6 pb-6 pr-4 pl-0 sm:pl-4 rounded-2xl">
                 <h1 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-black-100">Order Status</h1>
-                <button class="text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold flex gap-2 text-black-100 border border-black-10 rounded-full px-4 py-2">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10V5H1.5V8.5H5V10H0ZM8.5 5V1.5H5V0H10V5H8.5Z" fill="black"></path></svg>
+                <button class="flex items-center gap-1.5 px-[18px] py-2 border border-black/10 rounded-full bg-transparent text-sm font-bold cursor-pointer">
+                    <svg class="w-3.5 h-3.5 stroke-black stroke-[3]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 16V20H8" stroke-linecap="square" stroke-linejoin="bevel"/>
+                        <path d="M20 8V4H16" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    </svg>
                     FullScreen
                 </button>
             </header>
 
-            <div class="sub-content flex flex-col items-center h-full mt-[96px] px-[16px] mb-[16px] w-full md:mt-[80px]">
+            <div class="sub-content flex flex-col items-center h-full lg:mt-[96px] mt-0 px-[16px] mb-[16px] w-full">
                 <!-- McDonald's Info Card -->
-                <div class="mcdonald-card flex w-full h-[92px] p-[16px] justify-between items-center rounded-[16px] bg-black/5 md:h-auto md:flex-row md:gap-[8px] sm:p-[16px]">
+                <div class="mcdonald-card flex w-full h-[92px] p-[16px] justify-between items-center rounded-[16px] bg-black/5 md:flex-row md:gap-[8px] sm:p-[16px]">
                     <div class="mcd-logo flex items-center gap-4 font-medium text-[20px] tracking-[-0.01em] md:gap-2">
                         <img src="image 2.png" alt="McDonald's Logo" class="w-15 h-15 rounded-xl">
                         <span class="text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] tracking-[-0.01em] text-black-100 font-normal">McDonald's</span>
