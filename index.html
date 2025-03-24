@@ -31,7 +31,7 @@
 </head>
 <body class="custom-bg-gradient font-['DM_Sans'] flex min-h-screen w-full flex-col flex-wrap bg-cover bg-no-repeat antialiased">
     <!-- Sidebar -->
-    <div class="sidebar lg:fixed z-50 flex lg:h-full lg:left-0 lg:w-24 lg:flex-col lg:my-0 fixed flex-row w-full top-0 left-[16px] right-[16px] bottom-auto h-[64px] rounded-[48px] my-4 items-center justify-between py-4 bg-white lg:bg-transparent lg:rounded-none">
+    <div class="sidebar lg:fixed z-50 flex lg:h-full lg:left-0 lg:w-24 lg:flex-col lg:my-0 fixed flex-row w-[96%] left-[16px] right-[16px] bottom-auto h-[64px] top-0 rounded-[48px] my-4 items-center justify-between py-4 bg-white lg:bg-transparent lg:rounded-none md:right-4 sm:mr-5 sm:px-3">
         <!-- Sidebar Logo -->
         <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-0 lg:static lg:mt-0 lg:top-0">
             <img src="Logo (1).png" alt="Order Status Logo" class="w-8 h-8">
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Sidebar Profile -->
-        <div class="sidebar-profile z-10 flex w-fit flex-row lg:flex-col gap-2 rounded-6 bg-white px-2 py-2 lg:mb-4">
+        <div class="sidebar-profile z-10 flex w-fit flex-row lg:flex-col gap-2 rounded-[48px] bg-white px-2 py-2 lg:mb-4">
             <button class="inline-flex h-[48px] min-w-[48px] items-center justify-center rounded-full transition-colors bg-black-10">
                 <img src="Frame 8.png" alt="Profile">
             </button>
@@ -71,21 +71,18 @@
     </div>
 
     <!-- Main Content -->
-    <div class="pt-20 ml-0 lg:ml-20 lg:pt-0 flex flex-grow flex-col">
-        <main class="mt-1 h-screen flex flex-col w-full">
+    <div class="pt-20 ml-0 lg:ml-20 lg:pt-2 flex flex-grow flex-col">
+        <main class="mt-0 h-screen flex flex-col w-full">
             <!-- Header -->
-            <header class="flex justify-between p-4 fixed w-full bg-[linear-gradient(67.75deg,_#ffffff_19.18%,_#ffebe7_75.31%)] z-[900] lg:max-w-[calc(100%-96px)] max-[30rem]:max-w-full">
+            <header class="flex justify-between p-4 fixed w-full bg-[linear-gradient(67.75deg,_#ffffff_19.18%,_#ffebe7_75.31%)] z-[900] lg:max-w-[calc(100%-80px)] max-[30rem]:max-w-full rounded-2xl">
                 <h1 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-black-100">Order Status</h1>
-                <button class="flex items-center gap-[6px] px-3 py-2 border border-black/10 rounded-[25px] bg-transparent text-[14px] font-bold cursor-pointer w-[124px] h-[48px]">
-                    <svg class="w-[14px] h-[14px] stroke-black stroke-[3]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 16V20H8" stroke-linecap="square" stroke-linejoin="bevel"/>
-                        <path d="M20 8V4H16" stroke-linecap="square" stroke-linejoin="bevel"/>
-                    </svg>
+                <button class="text-[12px] md:text-[14px] lg:text-[14px] leading-[16px] font-bold flex gap-2 text-black-100 border border-black-10 rounded-full px-4 py-2">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10V5H1.5V8.5H5V10H0ZM8.5 5V1.5H5V0H10V5H8.5Z" fill="black"></path></svg>
                     FullScreen
                 </button>
             </header>
 
-            <div class="sub-content flex flex-col items-center h-full mt-[80px] px-[16px] mb-[16px] w-full md:mt-[96px]">
+            <div class="sub-content flex flex-col items-center h-full mt-[96px] px-[16px] mb-[16px] w-full md:mt-[80px]">
                 <!-- McDonald's Info Card -->
                 <div class="mcdonald-card flex w-full h-[92px] p-[16px] justify-between items-center rounded-[16px] bg-black/5 md:h-auto md:flex-row md:gap-[8px] sm:p-[16px]">
                     <div class="mcd-logo flex items-center gap-4 font-medium text-[20px] tracking-[-0.01em] md:gap-2">
