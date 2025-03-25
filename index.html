@@ -31,7 +31,7 @@
 </head>
 <body class="custom-bg-gradient font-['DM_Sans'] flex min-h-screen w-full flex-col flex-wrap bg-cover bg-no-repeat antialiased">
     <!-- Sidebar -->
-    <div class="sidebar lg:fixed z-50 flex lg:h-full lg:left-0 lg:w-24 lg:flex-col lg:my-0 fixed flex-row w-[96%] left-[16px] right-[16px] bottom-auto h-[64px] top-0 rounded-[48px] my-4 items-center justify-between py-4 bg-white lg:bg-transparent lg:rounded-none md:right-4 sm:mr-5 sm:px-3">
+    <div class="sidebar top-4 lg:fixed z-50 flex lg:h-full lg:left-0 lg:w-24 lg:flex-col lg:my-0 fixed flex-row w-[100%] bottom-auto h-[64px] rounded-[48px] my-4 items-center justify-between py-4 bg-white lg:bg-transparent sm:p-0 lg:rounded-none ml-0">
         <!-- Sidebar Logo -->
         <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-0 lg:static ml-0 lg:mt-0 lg:top-0">
             <img src="Logo (1).png" alt="Order Status Logo" class="w-8 h-8">
@@ -76,7 +76,7 @@
             <!-- Header -->
             <header class="flex items-center h-24 justify-between lg:top-0 w-full bg-[linear-gradient(67.75deg,_#ffffff_19.18%,_#ffebe7_75.31%)] lg:fixed lg:z-[900] lg:max-w-[calc(100%-96px)] lg:pl-0 pt-6 pb-6 pr-4 pl-0 sm:pl-4 rounded-2xl">
                 <h1 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-black-100">Order Status</h1>
-                <button class="flex items-center gap-1.5 px-[18px] py-2 border border-black/10 rounded-full bg-transparent text-sm font-bold cursor-pointer">
+                <button class="flex items-center gap-1.5 border border-black/10 rounded-[48px] p-[16px] pr-[16px] pb-[16px] pl-[12px] bg-transparent text-sm font-bold cursor-pointer">
                     <svg class="w-3.5 h-3.5 stroke-black stroke-[3]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 16V20H8" stroke-linecap="square" stroke-linejoin="bevel"/>
                         <path d="M20 8V4H16" stroke-linecap="square" stroke-linejoin="bevel"/>
@@ -96,8 +96,8 @@
                 </div>
 
                 <!-- Grid Wrapper -->
-                <div class="grid-wrapper grid w-full flex-grow gap-4 mt-4 md:grid-cols-2 md:mt-[5px] sm:grid-cols-2 sm:mt-[10px] lg:grid-cols-[1fr_383px] max-lg:flex max-lg:flex-row max-[30rem]:flex max-[30rem]:flex-row">                    <div class="flex-1 bg-white rounded-lg p-6 flex flex-col h-full">
-                        <h2 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-center mb-6">Preparing</h2>
+                <div class="grid-wrapper grid w-full h-[100vh] flex-grow gap-4 mt-4 md:grid-cols-2 md:mt-[16px] sm:grid-cols-2 sm:mt-[10px] lg:grid-cols-[1fr_383px] max-lg:flex max-lg:flex-row max-[30rem]:flex max-[30rem]:flex-row">                    <div class="flex-1 bg-white rounded-lg p-6 flex flex-col h-full">
+                    <h2 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-center mb-6">Preparing</h2>
                         <div class="overflow-y-auto masonry-scroll-container flex-1 text-center" style="max-height: calc(100vh - 200px);">
                             <div class="items flex gap-2 justify-center items-start flex-wrap flex-grow">
                                 <!-- Repeat items -->
@@ -163,39 +163,31 @@
                     <div class="flex-1 bg-white rounded-lg p-6 flex flex-col h-full">
                         <h2 class="text-[24px] md:text-[28px] lg:text-[32px] leading-[40px] tracking-[-0.03em] font-bold text-center mb-6">Ready</h2>
                         <div class="overflow-y-auto masonry-scroll-container flex-1 text-center" style="max-height: calc(100vh - 200px);">                            <div class="items flex gap-2 justify-center items-start flex-wrap flex-grow">
-                            <div class="items flex gap-2 justify-center items-start flex-wrap flex-grow">
-                                <!-- First item is larger -->
-                                <div class="item w-full h-32 flex items-center justify-center rounded-xl font-bold text-[32px] bg-green-600 text-white">3885</div>
-                                <!-- Repeat items -->
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
-                                <div class="item flex items-center justify-center w-[106px] h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                            <div class="grid gap-2 justify-center grid-cols-3 w-full">
+                                <!-- First item spanning full width -->
+                                <div class="col-span-3 h-32 flex items-center justify-center rounded-xl font-bold text-[32px] bg-green-600 text-white">
+                                    3885
+                                </div>
+                                <!-- Other items evenly spaced -->
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div><div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div><div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
+                                <div class="flex items-center justify-center h-16 rounded-xl font-bold text-2xl tracking-tighter bg-green-600 text-white">3885</div>
                             </div>
                         </div>
                     </div>
